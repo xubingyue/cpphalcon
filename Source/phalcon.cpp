@@ -1,6 +1,7 @@
 #include <phpcpp.h>
 #include "Version.h"
 #include "Loader.h"
+#include "Dispatcher.h"
 #include "DI.h"
 #include "DI_Service.h"
 
@@ -82,7 +83,7 @@ extern "C" {
 		phalconNamespace.add(std::move(version));
 
 		/* Class Phalcon\Loader */
-		Php::Class<Phalcon::Version> loader("Loader");
+		Php::Class<Phalcon::Loader> loader("Loader");
 
 		loader.property("_foundPath", nullptr, Php::Protected);
 		loader.property("_checkedPath", nullptr, Php::Protected);
@@ -94,10 +95,45 @@ extern "C" {
 		loader.property("_registered", false, Php::Protected);
 		loader.property("_eventsManager", nullptr, Php::Protected);
 
-		loader.method("get", &Phalcon::Version::get);
-		loader.method("getId", &Phalcon::Version::getId);
+		loader.method("__construct", &Phalcon::Loader::__construct);
+		loader.method("register", &Phalcon::Loader::_register);
+		loader.method("unregister", &Phalcon::Loader::unregister);
 
 		phalconNamespace.add(std::move(loader));
+
+		/* Class Phalcon\Dispatcher */
+		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher");
+
+		dispatcher.property("_dependencyInjector", nullptr, Php::Protected);
+		dispatcher.property("_eventsManager", nullptr, Php::Protected);
+		dispatcher.property("_activeHandler", nullptr, Php::Protected);
+		dispatcher.property("_finished", nullptr, Php::Protected);
+		dispatcher.property("_forwarded", false, Php::Protected);
+		dispatcher.property("_moduleName", nullptr, Php::Protected);
+		dispatcher.property("_namespaceName", nullptr, Php::Protected);
+		dispatcher.property("_handlerName", nullptr, Php::Protected);
+		dispatcher.property("_actionName", nullptr, Php::Protected);
+		dispatcher.property("_params", nullptr, Php::Protected);
+		dispatcher.property("_returnedValue", nullptr, Php::Protected);
+		dispatcher.property("_lastHandler", nullptr, Php::Protected);
+		dispatcher.property("_defaultNamespace", nullptr, Php::Protected);
+		dispatcher.property("_defaultHandler", nullptr, Php::Protected);
+		dispatcher.property("_defaultAction", nullptr, Php::Protected);
+		dispatcher.property("_handlerSuffix", nullptr, Php::Protected);
+		dispatcher.property("_actionSuffix", "Action", Php::Protected);
+		dispatcher.property("_previousHandlerName", nullptr, Php::Protected);
+		dispatcher.property("_previousActionName", nullptr, Php::Protected);
+
+		dispatcher.property("EXCEPTION_NO_DI", Phalcon::Dispatcher::EXCEPTION_NO_DI, Php::Const);
+		dispatcher.property("EXCEPTION_CYCLIC_ROUTING", Phalcon::Dispatcher::EXCEPTION_CYCLIC_ROUTING, Php::Const);
+		dispatcher.property("EXCEPTION_HANDLER_NOT_FOUND", Phalcon::Dispatcher::EXCEPTION_HANDLER_NOT_FOUND, Php::Const);
+		dispatcher.property("EXCEPTION_INVALID_HANDLER", Phalcon::Dispatcher::EXCEPTION_INVALID_HANDLER, Php::Const);
+		dispatcher.property("EXCEPTION_INVALID_PARAMS", Phalcon::Dispatcher::EXCEPTION_INVALID_PARAMS, Php::Const);
+		dispatcher.property("EXCEPTION_ACTION_NOT_FOUND", Phalcon::Dispatcher::EXCEPTION_ACTION_NOT_FOUND, Php::Const);
+
+		dispatcher.method("__construct", &Phalcon::Dispatcher::__construct);
+
+		phalconNamespace.add(std::move(dispatcher));
 
 		/* Class Phalcon\DI */
 		Php::Class<Phalcon::DI> di("DI");
