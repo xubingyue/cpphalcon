@@ -28,3 +28,8 @@ make && sudo make install
 make clean
 make && sudo make install
 ```
+
+测试
+```shell
+php --ri phalcon++
+```
