@@ -18,8 +18,9 @@ namespace Phalcon {
 
 	}
 
-	void DI::getInternalEventsManager() {
+	Php::Value DI::getInternalEventsManager() {
 
+		return nullptr;
 	}
 
 	Php::Value DI::set(Php::Parameters &params) {

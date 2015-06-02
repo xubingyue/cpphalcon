@@ -57,7 +57,7 @@ namespace Phalcon {
 		/**
 		 * Returns the internal event manager
 		 */
-		void getInternalEventsManager();
+		Php::Value getInternalEventsManager();
 
 		/**
 		 * Registers a service in the services container

@@ -2,9 +2,13 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name="include">
+        <in>Loader.h</in>
+      </df>
       <df name="Source">
         <in>DI.cpp</in>
         <in>DI_Service.cpp</in>
+        <in>Loader.cpp</in>
         <in>Version.cpp</in>
         <in>phalcon.cpp</in>
       </df>
@@ -48,9 +52,13 @@
       </item>
       <item path="Source/DI_Service.cpp" ex="false" tool="1" flavor2="8">
       </item>
+      <item path="Source/Loader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="Source/Version.cpp" ex="false" tool="1" flavor2="8">
       </item>
       <item path="Source/phalcon.cpp" ex="false" tool="1" flavor2="8">
+      </item>
+      <item path="include/Loader.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>
