@@ -1,0 +1,3 @@
+[submodule "DependentExtensions/PHP-CPP"]
+	path = DependentExtensions/PHP-CPP
+	url = https://github.com/dreamsxin/PHP-CPP.git
