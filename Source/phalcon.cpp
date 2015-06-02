@@ -1,5 +1,6 @@
 #include <phpcpp.h>
 #include "Version.h"
+#include "Loader.h"
 #include "DI.h"
 #include "DI_Service.h"
 
@@ -79,6 +80,24 @@ extern "C" {
 		version.method("getId", &Phalcon::Version::getId);
 
 		phalconNamespace.add(std::move(version));
+
+		/* Class Phalcon\Loader */
+		Php::Class<Phalcon::Version> loader("Loader");
+
+		loader.property("_foundPath", nullptr, Php::Protected);
+		loader.property("_checkedPath", nullptr, Php::Protected);
+		loader.property("_prefixes", nullptr, Php::Protected);
+		loader.property("_classes", nullptr, Php::Protected);
+		loader.property("_extensions", nullptr, Php::Protected);
+		loader.property("_namespaces", nullptr, Php::Protected);
+		loader.property("_directories", nullptr, Php::Protected);
+		loader.property("_registered", false, Php::Protected);
+		loader.property("_eventsManager", nullptr, Php::Protected);
+
+		loader.method("get", &Phalcon::Version::get);
+		loader.method("getId", &Phalcon::Version::getId);
+
+		phalconNamespace.add(std::move(loader));
 
 		/* Class Phalcon\DI */
 		Php::Class<Phalcon::DI> di("DI");
