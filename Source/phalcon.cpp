@@ -73,66 +73,15 @@ extern "C" {
 		/* Class Phalcon\Version */
 		Php::Class<Phalcon::Version> version("Version");
 
-		version.property("TYPE_ALPHA", Phalcon::Version::TYPE_ALPHA, Php::Const);
-		version.property("TYPE_BETA", Phalcon::Version::TYPE_BETA, Php::Const);
-		version.property("TYPE_RC", Phalcon::Version::TYPE_RC, Php::Const);
-		version.property("TYPE_STABLE", Phalcon::Version::TYPE_STABLE, Php::Const);
-
-		version.method("get", &Phalcon::Version::get);
-		version.method("getId", &Phalcon::Version::getId);
-
 		phalconNamespace.add(std::move(version));
 
 		/* Class Phalcon\Loader */
 		Php::Class<Phalcon::Loader> loader("Loader");
 
-		loader.property("_foundPath", nullptr, Php::Protected);
-		loader.property("_checkedPath", nullptr, Php::Protected);
-		loader.property("_prefixes", nullptr, Php::Protected);
-		loader.property("_classes", nullptr, Php::Protected);
-		loader.property("_extensions", nullptr, Php::Protected);
-		loader.property("_namespaces", nullptr, Php::Protected);
-		loader.property("_directories", nullptr, Php::Protected);
-		loader.property("_registered", false, Php::Protected);
-		loader.property("_eventsManager", nullptr, Php::Protected);
-
-		loader.method("__construct", &Phalcon::Loader::__construct);
-		loader.method("register", &Phalcon::Loader::_register);
-		loader.method("unregister", &Phalcon::Loader::unregister);
-
 		phalconNamespace.add(std::move(loader));
 
 		/* Class Phalcon\Dispatcher */
 		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher");
-
-		dispatcher.property("_dependencyInjector", nullptr, Php::Protected);
-		dispatcher.property("_eventsManager", nullptr, Php::Protected);
-		dispatcher.property("_activeHandler", nullptr, Php::Protected);
-		dispatcher.property("_finished", nullptr, Php::Protected);
-		dispatcher.property("_forwarded", false, Php::Protected);
-		dispatcher.property("_moduleName", nullptr, Php::Protected);
-		dispatcher.property("_namespaceName", nullptr, Php::Protected);
-		dispatcher.property("_handlerName", nullptr, Php::Protected);
-		dispatcher.property("_actionName", nullptr, Php::Protected);
-		dispatcher.property("_params", nullptr, Php::Protected);
-		dispatcher.property("_returnedValue", nullptr, Php::Protected);
-		dispatcher.property("_lastHandler", nullptr, Php::Protected);
-		dispatcher.property("_defaultNamespace", nullptr, Php::Protected);
-		dispatcher.property("_defaultHandler", nullptr, Php::Protected);
-		dispatcher.property("_defaultAction", nullptr, Php::Protected);
-		dispatcher.property("_handlerSuffix", nullptr, Php::Protected);
-		dispatcher.property("_actionSuffix", "Action", Php::Protected);
-		dispatcher.property("_previousHandlerName", nullptr, Php::Protected);
-		dispatcher.property("_previousActionName", nullptr, Php::Protected);
-
-		dispatcher.property("EXCEPTION_NO_DI", Phalcon::Dispatcher::EXCEPTION_NO_DI, Php::Const);
-		dispatcher.property("EXCEPTION_CYCLIC_ROUTING", Phalcon::Dispatcher::EXCEPTION_CYCLIC_ROUTING, Php::Const);
-		dispatcher.property("EXCEPTION_HANDLER_NOT_FOUND", Phalcon::Dispatcher::EXCEPTION_HANDLER_NOT_FOUND, Php::Const);
-		dispatcher.property("EXCEPTION_INVALID_HANDLER", Phalcon::Dispatcher::EXCEPTION_INVALID_HANDLER, Php::Const);
-		dispatcher.property("EXCEPTION_INVALID_PARAMS", Phalcon::Dispatcher::EXCEPTION_INVALID_PARAMS, Php::Const);
-		dispatcher.property("EXCEPTION_ACTION_NOT_FOUND", Phalcon::Dispatcher::EXCEPTION_ACTION_NOT_FOUND, Php::Const);
-
-		dispatcher.method("__construct", &Phalcon::Dispatcher::__construct);
 
 		phalconNamespace.add(std::move(dispatcher));
 		
@@ -141,46 +90,10 @@ extern "C" {
 		/* Class Phalcon\Dispatcher */
 		Php::Class<Phalcon::Db> db("Db");
 
-		db.property("FETCH_USE_DEFAULT", Php::constant("PDO::FETCH_USE_DEFAULT").numericValue(), Php::Const);
-		db.property("FETCH_LAZY", Php::constant("PDO::FETCH_LAZY").numericValue(), Php::Const);
-		db.property("FETCH_ASSOC", Php::constant("PDO::FETCH_ASSOC").numericValue(), Php::Const);
-		db.property("FETCH_NUM", Php::constant("PDO::FETCH_NUM").numericValue(), Php::Const);
-		db.property("FETCH_BOTH", Php::constant("PDO::FETCH_BOTH").numericValue(), Php::Const);
-		db.property("FETCH_OBJ", Php::constant("PDO::FETCH_OBJ").numericValue(), Php::Const);
-		db.property("FETCH_BOUND", Php::constant("PDO::FETCH_BOUND").numericValue(), Php::Const);
-		db.property("FETCH_COLUMN", Php::constant("PDO::FETCH_COLUMN").numericValue(), Php::Const);
-		db.property("FETCH_CLASS", Php::constant("PDO::FETCH_CLASS").numericValue(), Php::Const);
-		db.property("FETCH_INTO", Php::constant("PDO::FETCH_INTO").numericValue(), Php::Const);
-		db.property("FETCH_FUNC", Php::constant("PDO::FETCH_FUNC").numericValue(), Php::Const);
-		db.property("FETCH_NAMED", Php::constant("PDO::FETCH_NAMED").numericValue(), Php::Const);
-		db.property("FETCH_KEY_PAIR", Php::constant("PDO::FETCH_KEY_PAIR").numericValue(), Php::Const);
-		db.property("FETCH_GROUP", Php::constant("PDO::FETCH_GROUP").numericValue(), Php::Const);
-		db.property("FETCH_UNIQUE", Php::constant("PDO::FETCH_UNIQUE").numericValue(), Php::Const);
-		db.property("FETCH_CLASSTYPE", Php::constant("PDO::FETCH_CLASSTYPE").numericValue(), Php::Const);
-		db.property("FETCH_SERIALIZE", Php::constant("PDO::FETCH_SERIALIZE").numericValue(), Php::Const);
-		db.property("FETCH_PROPS_LATE", Php::constant("PDO::FETCH_PROPS_LATE").numericValue(), Php::Const);
-
-		db.method("setup", &Phalcon::Db::setup);
-
 		phalconNamespace.add(std::move(db));
 
 		/* Class Phalcon\DI */
 		Php::Class<Phalcon::DI> di("DI");
-
-		di.method("__construct", &Phalcon::DI::__construct);
-		di.method("setDefault", &Phalcon::DI::setDefault,{
-			Php::ByVal("dependencyInjector", "Phalcon\\DiInterface", true),
-		});
-		di.method("getDefault", &Phalcon::DI::getDefault);
-		di.method("set", &Phalcon::DI::set,{
-			Php::ByVal("name", Php::Type::String, true),
-			Php::ByVal("definition", Php::Type::Null, true),
-			Php::ByVal("shared", Php::Type::Bool, false),
-		});
-		di.method("get", &Phalcon::DI::set,{
-			Php::ByVal("name", Php::Type::String, true),
-			Php::ByVal("parameters", Php::Type::Array, false),
-		});
 
 		di.implements(diInterface);
 
@@ -188,22 +101,6 @@ extern "C" {
 
 		/* Class Phalcon\DI\Service */
 		Php::Class<Phalcon::DI_Service> di_service("Service");
-
-		di_service.method("__construct", &Phalcon::DI_Service::__construct,{
-			Php::ByVal("name", Php::Type::String, true),
-			Php::ByVal("definition", Php::Type::Null, true),
-			Php::ByVal("shared", Php::Type::Bool, false),
-		});
-		di_service.method("setSharedInstance",{
-			Php::ByVal("sharedInstance", Php::Type::Null, true),
-		});
-		di_service.method("setParameter",{
-			Php::ByVal("position", Php::Type::Numeric, true),
-			Php::ByVal("parameter", Php::Type::Array, true),
-		});
-		di_service.method("getParameter",{
-			Php::ByVal("position", Php::Type::Numeric, true),
-		});
 
 		di_service.implements(di_serviceInterface);
 

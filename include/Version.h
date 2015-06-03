@@ -6,6 +6,11 @@
 namespace Phalcon {
 
 	/**
+	 *  Forward declarations
+	 */
+	template <class T> class Class;
+
+	/**
 	 * Phalcon\Version
 	 *
 	 * This class allows to get the installed version of the framework
@@ -33,6 +38,17 @@ namespace Phalcon {
 		}
 
 		virtual ~Version() {
+		}
+
+		template<typename T>
+		static void Init(Php::Class<T> &version) {
+			version.property("TYPE_ALPHA", Phalcon::Version::TYPE_ALPHA, Php::Const);
+			version.property("TYPE_BETA", Phalcon::Version::TYPE_BETA, Php::Const);
+			version.property("TYPE_RC", Phalcon::Version::TYPE_RC, Php::Const);
+			version.property("TYPE_STABLE", Phalcon::Version::TYPE_STABLE, Php::Const);
+
+			version.method("get", &Phalcon::Version::get);
+			version.method("getId", &Phalcon::Version::getId);
 		}
 
 		/**

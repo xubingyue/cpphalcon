@@ -37,6 +37,23 @@ namespace Phalcon {
 		virtual ~Loader() {
 		}
 
+		template<typename T>
+		static void Init(Php::Class<T> &loader) {
+			loader.property("_foundPath", nullptr, Php::Protected);
+			loader.property("_checkedPath", nullptr, Php::Protected);
+			loader.property("_prefixes", nullptr, Php::Protected);
+			loader.property("_classes", nullptr, Php::Protected);
+			loader.property("_extensions", nullptr, Php::Protected);
+			loader.property("_namespaces", nullptr, Php::Protected);
+			loader.property("_directories", nullptr, Php::Protected);
+			loader.property("_registered", false, Php::Protected);
+			loader.property("_eventsManager", nullptr, Php::Protected);
+
+			loader.method("__construct", &Phalcon::Loader::__construct);
+			loader.method("register", &Phalcon::Loader::_register);
+			loader.method("unregister", &Phalcon::Loader::unregister);
+		}
+
 		/**
 		 * Phalcon\Loader constructor
 		 *

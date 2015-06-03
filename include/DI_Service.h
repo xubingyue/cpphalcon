@@ -32,6 +32,25 @@ namespace Phalcon {
 		virtual ~DI_Service() {
 		}
 
+		template<typename T>
+		static void Init(Php::Class<T> &di_service) {
+			di_service.method("__construct", &Phalcon::DI_Service::__construct,{
+				Php::ByVal("name", Php::Type::String, true),
+				Php::ByVal("definition", Php::Type::Null, true),
+				Php::ByVal("shared", Php::Type::Bool, false),
+			});
+			di_service.method("setSharedInstance",{
+				Php::ByVal("sharedInstance", Php::Type::Null, true),
+			});
+			di_service.method("setParameter",{
+				Php::ByVal("position", Php::Type::Numeric, true),
+				Php::ByVal("parameter", Php::Type::Array, true),
+			});
+			di_service.method("getParameter",{
+				Php::ByVal("position", Php::Type::Numeric, true),
+			});
+		}
+
 		/**
 		 * Phalcon\DI\Service
 		 *

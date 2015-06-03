@@ -43,6 +43,24 @@ namespace Phalcon {
 		virtual ~DI() {
 		}
 
+		template<typename T>
+		static void Init(Php::Class<T> &di) {
+			di.method("__construct", &Phalcon::DI::__construct);
+			di.method("setDefault", &Phalcon::DI::setDefault,{
+				Php::ByVal("dependencyInjector", "Phalcon\\DiInterface", true),
+			});
+			di.method("getDefault", &Phalcon::DI::getDefault);
+			di.method("set", &Phalcon::DI::set,{
+				Php::ByVal("name", Php::Type::String, true),
+				Php::ByVal("definition", Php::Type::Null, true),
+				Php::ByVal("shared", Php::Type::Bool, false),
+			});
+			di.method("get", &Phalcon::DI::set,{
+				Php::ByVal("name", Php::Type::String, true),
+				Php::ByVal("parameters", Php::Type::Array, false),
+			});
+		}
+
 		/**
 		 * Phalcon\DI constructor
 		 *
