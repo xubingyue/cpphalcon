@@ -3,6 +3,7 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
       <df name="Source">
+        <in>Config.cpp</in>
         <in>DI.cpp</in>
         <in>DI_Service.cpp</in>
         <in>Db.cpp</in>
@@ -50,6 +51,10 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="Source/Config.cpp" ex="false" tool="1" flavor2="8">
+        <ccTool flags="0">
+        </ccTool>
+      </item>
       <item path="Source/DI.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>

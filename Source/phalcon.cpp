@@ -1,5 +1,6 @@
 #include <phpcpp.h>
 #include "Version.h"
+#include "Config.h"
 #include "Loader.h"
 #include "Dispatcher.h"
 #include "DIInterface.h"
@@ -14,38 +15,28 @@ extern "C" {
 
 		static Php::Extension extension("Phalcon++", "0.0.1");
 
+		/* Namespace Phalcon */
 		Php::Namespace phalconNamespace("Phalcon");
-		Php::Namespace diNamespace("DI");
-
-		/* Interface Phalcon\DiInterface */
-		Phalcon::DIInterface diInterface("DIInterface");
-
-		phalconNamespace.add(std::move(diInterface));
-
-		/* Interface Phalcon\DI\ServiceInterface */
-		Phalcon::DI_ServiceInterface diServiceInterface("ServiceInterface");
-
-		diNamespace.add(std::move(diServiceInterface));
 
 		/* Class Phalcon\Version */
 		Php::Class<Phalcon::Version> version("Version");
 
 		phalconNamespace.add(std::move(version));
 
+		/* Class Phalcon\Config */
+		Php::Class<Phalcon::Config> config("Config");
+
+		phalconNamespace.add(std::move(config));
+
 		/* Class Phalcon\Loader */
 		Php::Class<Phalcon::Loader> loader("Loader");
 
 		phalconNamespace.add(std::move(loader));
 
-		/* Class Phalcon\Dispatcher */
-		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher");
+		/* Interface Phalcon\DiInterface */
+		Phalcon::DIInterface diInterface("DIInterface");
 
-		phalconNamespace.add(std::move(dispatcher));
-
-		/* Class Phalcon\Dispatcher */
-		Php::Class<Phalcon::Db> db("Db");
-
-		phalconNamespace.add(std::move(db));
+		phalconNamespace.add(std::move(diInterface));
 
 		/* Class Phalcon\DI */
 		Php::Class<Phalcon::DI> di("DI");
@@ -53,6 +44,24 @@ extern "C" {
 		di.implements(diInterface);
 
 		phalconNamespace.add(std::move(di));
+
+		/* Class Phalcon\Dispatcher */
+		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher");
+
+		phalconNamespace.add(std::move(dispatcher));
+
+		/* Class Phalcon\Db */
+		Php::Class<Phalcon::Db> db("Db");
+
+		phalconNamespace.add(std::move(db));
+
+		/* Namespace DI */
+		Php::Namespace diNamespace("DI");
+
+		/* Interface Phalcon\DI\ServiceInterface */
+		Phalcon::DI_ServiceInterface diServiceInterface("ServiceInterface");
+
+		diNamespace.add(std::move(diServiceInterface));
 
 		/* Class Phalcon\DI\Service */
 		Php::Class<Phalcon::DI_Service> di_service("Service");
