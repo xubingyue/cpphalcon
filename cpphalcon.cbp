@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cpphalcon" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="all">
+				<Option output="cpphalcon" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Source/Config.cpp" />
+		<Unit filename="Source/DI.cpp" />
+		<Unit filename="Source/DI_Service.cpp" />
+		<Unit filename="Source/Db.cpp" />
+		<Unit filename="Source/Dispatcher.cpp" />
+		<Unit filename="Source/Loader.cpp" />
+		<Unit filename="Source/Version.cpp" />
+		<Unit filename="Source/phalcon.cpp" />
+		<Unit filename="include/Config.h" />
+		<Unit filename="include/DI.h" />
+		<Unit filename="include/DIInterface.h" />
+		<Unit filename="include/DI_Service.h" />
+		<Unit filename="include/DI_ServiceInterface.h" />
+		<Unit filename="include/Db.h" />
+		<Unit filename="include/Dispatcher.h" />
+		<Unit filename="include/Loader.h" />
+		<Unit filename="include/Version.h" />
+		<Extensions>
+			<code_completion>
+				<search_path add="/usr/include" />
+			</code_completion>
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
