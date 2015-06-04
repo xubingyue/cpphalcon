@@ -2,6 +2,7 @@
 #include "Version.h"
 #include "Config.h"
 #include "Loader.h"
+#include "DispatcherInterface.h"
 #include "Dispatcher.h"
 #include "DIInterface.h"
 #include "DI.h"
@@ -46,8 +47,15 @@ extern "C" {
 
 		phalconNamespace.add(std::move(di));
 
+		/* Interface Phalcon\DiInterface */
+		Phalcon::DispatcherInterface dispatcherInterface("DispatcherInterface");
+
+		phalconNamespace.add(std::move(dispatcherInterface));
+
 		/* Class Phalcon\Dispatcher */
 		Php::Class<Phalcon::Dispatcher> dispatcher("Dispatcher");
+
+		dispatcher.implements(dispatcherInterface);
 
 		phalconNamespace.add(std::move(dispatcher));
 

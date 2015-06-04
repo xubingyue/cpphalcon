@@ -52,7 +52,7 @@ namespace Phalcon
 		{
 			di.method("__construct", &Phalcon::DI::__construct);
 			di.method("setDefault", &Phalcon::DI::setDefault, {
-				Php::ByVal("dependencyInjector", "Phalcon\\DiInterface", true),
+				Php::ByVal("dependencyInjector", "Phalcon\\DiInterface"),
 			});
 			di.method("getDefault", &Phalcon::DI::getDefault);
 			di.method("set", &Phalcon::DI::set, {

@@ -140,14 +140,14 @@ namespace Phalcon
 			/**
 			 * Set a default dependency injection container to be obtained into static methods
 			 */
-			method("setDefault", {
-				Php::ByVal("dependencyInjector", Php::Type::Object),
+			method("setDefault", Php::Static, {
+				Php::ByVal("dependencyInjector", "Phalcon\\DiInterface"),
 			});
 
 			/**
 			 * Return the last DI created
 			 */
-			method("getDefault");
+			method("getDefault", Php::Static);
 
 			/**
 			 * Resets the internal default DI
