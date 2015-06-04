@@ -4,26 +4,31 @@
 #include <iostream>
 #include <sstream>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	DI* DI::_default = nullptr;
 
-	void DI::__construct() {
+	void DI::__construct()
+	{
 		if (!_default) {
 			_default = this;
 		}
 	}
 
-	void DI::setInternalEventsManager(Php::Parameters &params) {
+	void DI::setInternalEventsManager(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value DI::getInternalEventsManager() {
+	Php::Value DI::getInternalEventsManager()
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::set(Php::Parameters &params) {
+	Php::Value DI::set(Php::Parameters &params)
+	{
 		try {
 			Php::Value name = params.at(0);
 			Php::Value definition = params.at(1);
@@ -35,36 +40,43 @@ namespace Phalcon {
 		return this;
 	}
 
-	Php::Value DI::setShared(Php::Parameters &params) {
+	Php::Value DI::setShared(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	void DI::remove(Php::Parameters &params) {
+	void DI::remove(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value DI::attempt(Php::Parameters &params) {
+	Php::Value DI::attempt(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::setRaw(Php::Parameters &params) {
+	Php::Value DI::setRaw(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::getRaw(Php::Parameters &params) {
+	Php::Value DI::getRaw(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::getService(Php::Parameters &params) {
+	Php::Value DI::getService(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::get(Php::Parameters &params) {
+	Php::Value DI::get(Php::Parameters &params)
+	{
 		try {
 			Php::Value name = params.at(0);
 			Php::Value parameters = params.size() > 1 ? params.at(1) : Php::Value(nullptr);
@@ -75,56 +87,66 @@ namespace Phalcon {
 		return this;
 	}
 
-	Php::Value DI::getShared(Php::Parameters &params) {
+	Php::Value DI::getShared(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::has(Php::Parameters &params) {
+	Php::Value DI::has(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::wasFreshInstance() {
+	Php::Value DI::wasFreshInstance()
+	{
 
 		return nullptr;
 	}
 
-	Php::Value DI::getServices() {
+	Php::Value DI::getServices()
+	{
 
 		return nullptr;
 	}
 
-	bool DI::offsetExists(const Php::Value &key) {
+	bool DI::offsetExists(const Php::Value &key)
+	{
 
 		return false;
 	}
 
-	void DI::offsetSet(const Php::Value &key, const Php::Value &value) {
+	void DI::offsetSet(const Php::Value &key, const Php::Value &value)
+	{
 
 	}
 
-	Php::Value DI::offsetGet(const Php::Value &key) {
+	Php::Value DI::offsetGet(const Php::Value &key)
+	{
 
 		return nullptr;
 	}
 
-	void DI::offsetUnset(const Php::Value &key) {
+	void DI::offsetUnset(const Php::Value &key)
+	{
 
 	}
 
-	Php::Value DI::__call(const char *method, Php::Parameters &params) const {
+	Php::Value DI::__call(const char *method, Php::Parameters &params) const
+	{
 
 		std::string message = "Call to undefined method or service '";
 		message.append(method);
 		message.append("'");
 
 		throw Php::Exception(message);
-		
+
 		return nullptr;
 	}
 
-	void DI::setDefault(Php::Parameters &params) {
+	void DI::setDefault(Php::Parameters &params)
+	{
 		try {
 			Php::Value value = params.at(0);
 			_default = (DI *) value.implementation();
@@ -133,11 +155,13 @@ namespace Phalcon {
 		}
 	}
 
-	Php::Value DI::getDefault() {
+	Php::Value DI::getDefault()
+	{
 		return _default;
 	}
 
-	void DI::reset() {
+	void DI::reset()
+	{
 		_default = nullptr;
 	}
 }

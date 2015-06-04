@@ -4,9 +4,11 @@
 #include <iostream>
 #include <sstream>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
-	void DI_Service::__construct(Php::Parameters &params) {
+	void DI_Service::__construct(Php::Parameters &params)
+	{
 		try {
 			this->_name = params.at(0);
 			this->_definition = params.at(1);
@@ -16,32 +18,39 @@ namespace Phalcon {
 		}
 	}
 
-	Php::Value DI_Service::getName() {
+	Php::Value DI_Service::getName()
+	{
 
 		return this->_name;
 	}
 
-	void DI_Service::setShared(Php::Parameters &params) {
+	void DI_Service::setShared(Php::Parameters &params)
+	{
 		this->_shared = params.at(0);
 	}
 
-	Php::Value DI_Service::isShared() {
+	Php::Value DI_Service::isShared()
+	{
 		return this->_shared;
 	}
 
-	void DI_Service::setSharedInstance(Php::Parameters &params) {
+	void DI_Service::setSharedInstance(Php::Parameters &params)
+	{
 		this->_sharedInstance = params.at(0);
 	}
 
-	void DI_Service::setDefinition(Php::Parameters &params) {
+	void DI_Service::setDefinition(Php::Parameters &params)
+	{
 		this->_definition = params.at(0);
 	}
 
-	Php::Value DI_Service::getDefinition() {
+	Php::Value DI_Service::getDefinition()
+	{
 		return this->_definition;
 	}
 
-	Php::Value DI_Service::resolve(Php::Parameters &params) {
+	Php::Value DI_Service::resolve(Php::Parameters &params)
+	{
 		Php::Value parameters = params.size() > 0 ? params.at(0) : nullptr;
 		Php::Value dependencyInjector = params.size() > 1 ? params.at(1) : nullptr;
 
@@ -91,7 +100,8 @@ namespace Phalcon {
 		return instance;
 	}
 
-	Php::Value DI_Service::setParameter(Php::Parameters &params) {
+	Php::Value DI_Service::setParameter(Php::Parameters &params)
+	{
 		Php::Value position = params.at(0);
 		Php::Value parameter = params.at(1);
 
@@ -111,7 +121,8 @@ namespace Phalcon {
 		return this;
 	}
 
-	Php::Value DI_Service::getParameter(Php::Parameters &params) {
+	Php::Value DI_Service::getParameter(Php::Parameters &params)
+	{
 		Php::Value position = params.at(0);
 
 		if (!this->_definition.isArray()) {
@@ -129,7 +140,8 @@ namespace Phalcon {
 		return nullptr;
 	}
 
-	Php::Value DI_Service::isResolved() {
+	Php::Value DI_Service::isResolved()
+	{
 
 		return this->_resolved;
 	}

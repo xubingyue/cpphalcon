@@ -11,7 +11,8 @@
 
 extern "C" {
 
-	PHPCPP_EXPORT void *get_module() {
+	PHPCPP_EXPORT void *get_module()
+	{
 
 		static Php::Extension extension("Phalcon++", "0.0.1");
 

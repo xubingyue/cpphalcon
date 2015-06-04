@@ -4,32 +4,35 @@
 #include <iostream>
 #include <sstream>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
-	Php::Value Version::get() {
+	Php::Value Version::get()
+	{
 
 		std::stringstream ss;
 		ss << _major << "." << _medium << "." << _minor << " ";
 
 		switch (_special) {
-			case Version::TYPE_ALPHA:
-				ss << "ALPHA " << _special_number;
-				break;
-			case Version::TYPE_BETA:
-				ss << "BETA " << _special_number;
-				break;
-			case Version::TYPE_RC:
-				ss << "RC " << _special_number;
-				break;
-			case Version::TYPE_STABLE:
-				ss << "STABLE " << _special_number;
-				break;
+		case Version::TYPE_ALPHA:
+			ss << "ALPHA " << _special_number;
+			break;
+		case Version::TYPE_BETA:
+			ss << "BETA " << _special_number;
+			break;
+		case Version::TYPE_RC:
+			ss << "RC " << _special_number;
+			break;
+		case Version::TYPE_STABLE:
+			ss << "STABLE " << _special_number;
+			break;
 		}
 
 		return ss.str();
 	}
 
-	Php::Value Version::getId() {
+	Php::Value Version::getId()
+	{
 		std::stringstream ss;
 		ss << _major;
 

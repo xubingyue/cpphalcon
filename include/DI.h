@@ -3,7 +3,8 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\DI
@@ -26,7 +27,8 @@ namespace Phalcon {
 	 *
 	 *</code>
 	 */
-	class DI : public Php::Base, public Php::ArrayAccess {
+	class DI : public Php::Base, public Php::ArrayAccess
+	{
 	protected:
 		Php::Value _services;
 		Php::Value _sharedInstances;
@@ -37,25 +39,28 @@ namespace Phalcon {
 
 	public:
 
-		DI() {
+		DI()
+		{
 		}
 
-		virtual ~DI() {
+		virtual ~DI()
+		{
 		}
 
 		template<typename T>
-		static void Init(Php::Class<T> &di) {
+		static void Init(Php::Class<T> &di)
+		{
 			di.method("__construct", &Phalcon::DI::__construct);
-			di.method("setDefault", &Phalcon::DI::setDefault,{
+			di.method("setDefault", &Phalcon::DI::setDefault, {
 				Php::ByVal("dependencyInjector", "Phalcon\\DiInterface", true),
 			});
 			di.method("getDefault", &Phalcon::DI::getDefault);
-			di.method("set", &Phalcon::DI::set,{
+			di.method("set", &Phalcon::DI::set, {
 				Php::ByVal("name", Php::Type::String, true),
 				Php::ByVal("definition", Php::Type::Null, true),
 				Php::ByVal("shared", Php::Type::Bool, false),
 			});
-			di.method("get", &Phalcon::DI::set,{
+			di.method("get", &Phalcon::DI::set, {
 				Php::ByVal("name", Php::Type::String, true),
 				Php::ByVal("parameters", Php::Type::Array, false),
 			});

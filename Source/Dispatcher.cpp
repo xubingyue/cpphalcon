@@ -1,137 +1,167 @@
 #include "Dispatcher.h"
 
-namespace Phalcon {
+namespace Phalcon
+{
 
-	void Dispatcher::__construct() {
+	void Dispatcher::__construct()
+	{
 		Php::Value self(this);
 		self["_actionSuffix"] = "Action";
 	}
 
-	void Dispatcher::setDI(Php::Parameters &params) {
+	void Dispatcher::setDI(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getDI() {
+	Php::Value Dispatcher::getDI()
+	{
 
 		return nullptr;
 	}
 
-	Php::Value Dispatcher::setInternalEventsManager(Php::Parameters &params) {
+	Php::Value Dispatcher::setInternalEventsManager(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value Dispatcher::getInternalEventsManager() {
+	Php::Value Dispatcher::getInternalEventsManager()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setActionSuffix(Php::Parameters &params) {
+	void Dispatcher::setActionSuffix(Php::Parameters &params)
+	{
 
 	}
 
-	void Dispatcher::setModuleName(Php::Parameters &params) {
+	void Dispatcher::setModuleName(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getModuleName() {
+	Php::Value Dispatcher::getModuleName()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setNamespaceName(Php::Parameters &params) {
+	void Dispatcher::setNamespaceName(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getNamespaceName() {
+	Php::Value Dispatcher::getNamespaceName()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setDefaultNamespace(Php::Parameters &params) {
+	void Dispatcher::setDefaultNamespace(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getDefaultNamespace() {
+	Php::Value Dispatcher::getDefaultNamespace()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setDefaultAction(Php::Parameters &params) {
+	void Dispatcher::setDefaultAction(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getDefaultAction() {
+	Php::Value Dispatcher::getDefaultAction()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setActionName(Php::Parameters &params) {
+	void Dispatcher::setActionName(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getActionName() {
+	Php::Value Dispatcher::getActionName()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setParams(Php::Parameters &params) {
+	void Dispatcher::setParams(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getParams() {
+	Php::Value Dispatcher::getParams()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setParam(Php::Parameters &params) {
+	void Dispatcher::setParam(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getParam(Php::Parameters &params) {
+	Php::Value Dispatcher::getParam(Php::Parameters &params)
+	{
 
 		return nullptr;
 	}
 
-	Php::Value Dispatcher::getActiveMethod() {
+	Php::Value Dispatcher::getActiveMethod()
+	{
 
 		return nullptr;
 	}
 
-	Php::Value Dispatcher::isFinished() {
+	Php::Value Dispatcher::isFinished()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::setReturnedValue(Php::Parameters &params) {
+	void Dispatcher::setReturnedValue(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::getReturnedValue() {
+	Php::Value Dispatcher::getReturnedValue()
+	{
 
 		return nullptr;
 	}
 
-	Php::Value Dispatcher::dispatch() {
+	Php::Value Dispatcher::dispatch()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::forward(Php::Parameters &params) {
+	void Dispatcher::forward(Php::Parameters &params)
+	{
 
 	}
 
-	Php::Value Dispatcher::wasForwarded() {
+	Php::Value Dispatcher::wasForwarded()
+	{
 
 		return nullptr;
 	}
 
-	Php::Value Dispatcher::getHandlerClass() {
+	Php::Value Dispatcher::getHandlerClass()
+	{
 
 		return nullptr;
 	}
 
-	void Dispatcher::_resolveEmptyProperties() {
+	void Dispatcher::_resolveEmptyProperties()
+	{
 
 	}
 }

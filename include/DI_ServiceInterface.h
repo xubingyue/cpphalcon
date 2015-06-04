@@ -3,21 +3,24 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\Di\ServiceInterface
 	 *
 	 * Represents a service in the services container
 	 */
-	class DI_ServiceInterface : public Php::Interface {
+	class DI_ServiceInterface : public Php::Interface
+	{
 	public:
 
 		/**
 		 *  Constructor
 		 *  @param  name
 		 */
-		DI_ServiceInterface(const char *name) : Interface(name) {
+		DI_ServiceInterface(const char *name) : Interface(name)
+		{
 			/**
 			 * Phalcon\Di\ServiceInterface
 			 *
@@ -25,7 +28,7 @@ namespace Phalcon {
 			 * @param mixed definition
 			 * @param boolean shared
 			 */
-			method("__construct",{
+			method("__construct", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("definition", Php::Type::Null),
 				Php::ByVal("shared", Php::Type::Bool, false),
@@ -41,7 +44,7 @@ namespace Phalcon {
 			/**
 			 * Sets if the service is shared or not
 			 */
-			method("setShared",{
+			method("setShared", {
 				Php::ByVal("shared", Php::Type::Bool),
 			});
 
@@ -55,7 +58,7 @@ namespace Phalcon {
 			 *
 			 * @param mixed definition
 			 */
-			method("setDefinition",{
+			method("setDefinition", {
 				Php::ByVal("shared", Php::Type::Bool),
 			});
 

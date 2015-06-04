@@ -3,7 +3,8 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\Dispatcher
@@ -11,7 +12,8 @@ namespace Phalcon {
 	 * This is the base class for Phalcon\Mvc\Dispatcher and Phalcon\CLI\Dispatcher.
 	 * This class can't be instantiated directly, you can use it to create your own dispatchers
 	 */
-	class Dispatcher : public Php::Base {
+	class Dispatcher : public Php::Base
+	{
 	public:
 
 		enum EXCEPTION {
@@ -25,14 +27,17 @@ namespace Phalcon {
 
 	public:
 
-		Dispatcher() {
+		Dispatcher()
+		{
 		}
 
-		virtual ~Dispatcher() {
+		virtual ~Dispatcher()
+		{
 		}
 
 		template<typename T>
-		static void Init(Php::Class<T> &dispatcher) {
+		static void Init(Php::Class<T> &dispatcher)
+		{
 			dispatcher.property("_dependencyInjector", nullptr, Php::Protected);
 			dispatcher.property("_eventsManager", nullptr, Php::Protected);
 			dispatcher.property("_activeHandler", nullptr, Php::Protected);

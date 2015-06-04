@@ -1,9 +1,10 @@
 #include "Db.h"
 
-namespace Phalcon {
+namespace Phalcon
+{
 
-	void Db::setup(Php::Parameters &params) {
+	void Db::setup(Php::Parameters &params)
+	{
 		// @todo add implementation
 	}
 }
-

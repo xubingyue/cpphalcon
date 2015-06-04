@@ -3,7 +3,8 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 *  Forward declarations
@@ -15,7 +16,8 @@ namespace Phalcon {
 	 *
 	 * This class allows to get the installed version of the framework
 	 */
-	class Version : public Php::Base {
+	class Version : public Php::Base
+	{
 	public:
 
 		enum TYPE {
@@ -34,14 +36,17 @@ namespace Phalcon {
 
 	public:
 
-		Version() {
+		Version()
+		{
 		}
 
-		virtual ~Version() {
+		virtual ~Version()
+		{
 		}
 
 		template<typename T>
-		static void Init(Php::Class<T> &version) {
+		static void Init(Php::Class<T> &version)
+		{
 			version.property("TYPE_ALPHA", Phalcon::Version::TYPE_ALPHA, Php::Const);
 			version.property("TYPE_BETA", Phalcon::Version::TYPE_BETA, Php::Const);
 			version.property("TYPE_RC", Phalcon::Version::TYPE_RC, Php::Const);

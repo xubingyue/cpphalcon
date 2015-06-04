@@ -3,7 +3,8 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\Config
@@ -12,11 +13,13 @@ namespace Phalcon {
 	 * It provides a nested object property based user interface for accessing this configuration data within
 	 * application code.
 	 */
-	class Config : public Php::Base, public Php::ArrayAccess {
+	class Config : public Php::Base, public Php::ArrayAccess
+	{
 	public:
 
 		template<typename T>
-		static void Init(Php::Class<T> &config) {
+		static void Init(Php::Class<T> &config)
+		{
 			config.method("__construct", &Phalcon::Config::__construct);
 			config.method("get", &Phalcon::Config::get);
 			config.method("merge", &Phalcon::Config::merge);

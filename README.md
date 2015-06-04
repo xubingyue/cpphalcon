@@ -33,9 +33,20 @@ make && sudo make install
 ```shell
 php --ri phalcon++
 ```
-```
 
 参与项目规则
 ------------
 参照 Phalcon 2.0 功能，头文件需要加入类以及方法的注释。
+
 遇到变量名或方法名是 C++　关键字的添加前缀下划线`_`。
+
+
+代码风格（Source formatter）
+---------------------------
+Style: Linux
+
+Indentation size(in spaces): 4
+
+Use TABs instead of spaces
+
+Indent namespaces

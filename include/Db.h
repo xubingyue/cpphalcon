@@ -3,7 +3,8 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\Db
@@ -17,11 +18,13 @@ namespace Phalcon {
 	 *
 	 * Phalcon\Db is an abstract class. You only can use it with a database adapter like Phalcon\Db\Adapter\Pdo
 	 */
-	class Db : public Php::Base {
+	class Db : public Php::Base
+	{
 	public:
 
 		template<typename T>
-		static void Init(Php::Class<T> &db) {
+		static void Init(Php::Class<T> &db)
+		{
 			db.property("FETCH_USE_DEFAULT", Php::constant("PDO::FETCH_USE_DEFAULT").numericValue(), Php::Const);
 			db.property("FETCH_LAZY", Php::constant("PDO::FETCH_LAZY").numericValue(), Php::Const);
 			db.property("FETCH_ASSOC", Php::constant("PDO::FETCH_ASSOC").numericValue(), Php::Const);

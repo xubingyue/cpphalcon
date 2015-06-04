@@ -3,21 +3,24 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\DIInterface
 	 *
 	 * Interface for Phalcon\DI
 	 */
-	class DIInterface : public Php::Interface {
+	class DIInterface : public Php::Interface
+	{
 	public:
 
 		/**
 		 *  Constructor
 		 *  @param  name
 		 */
-		DIInterface(const char *name) : Interface(name) {
+		DIInterface(const char *name) : Interface(name)
+		{
 			/**
 			 * Registers a service in the services container
 			 *
@@ -26,7 +29,7 @@ namespace Phalcon {
 			 * @param boolean shared
 			 * @return Phalcon\Di\ServiceInterface
 			 */
-			method("set",{
+			method("set", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("definition", Php::Type::Null),
 				Php::ByVal("shared", Php::Type::Bool, false),
@@ -39,7 +42,7 @@ namespace Phalcon {
 			 * @param mixed definition
 			 * @return Phalcon\Di\ServiceInterface
 			 */
-			method("setShared",{
+			method("setShared", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("definition", Php::Type::Null),
 			});
@@ -47,7 +50,7 @@ namespace Phalcon {
 			/**
 			 * Removes a service in the services container
 			 */
-			method("remove",{
+			method("remove", {
 				Php::ByVal("name", Php::Type::String),
 			});
 
@@ -61,7 +64,7 @@ namespace Phalcon {
 			 * @param boolean shared
 			 * @return Phalcon\Di\ServiceInterface
 			 */
-			method("attempt",{
+			method("attempt", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("definition", Php::Type::Null),
 				Php::ByVal("shared", Php::Type::Bool, false),
@@ -74,7 +77,7 @@ namespace Phalcon {
 			 * @param array parameters
 			 * @return mixed
 			 */
-			method("get",{
+			method("get", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("parameters", Php::Type::Array, false),
 			});
@@ -86,7 +89,7 @@ namespace Phalcon {
 			 * @param array parameters
 			 * @return mixed
 			 */
-			method("getShared",{
+			method("getShared", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("parameters", Php::Type::Array, false),
 			});
@@ -94,7 +97,7 @@ namespace Phalcon {
 			/**
 			 * Sets a service using a raw Phalcon\Di\Service definition
 			 */
-			method("setRaw",{
+			method("setRaw", {
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("rawDefinition", Php::Type::Object),
 			});
@@ -104,21 +107,21 @@ namespace Phalcon {
 			 * @param string name
 			 * @return mixed
 			 */
-			method("getRaw",{
+			method("getRaw", {
 				Php::ByVal("name", Php::Type::String),
 			});
 
 			/**
 			 * Returns the corresponding Phalcon\Di\Service instance for a service
 			 */
-			method("getService",{
+			method("getService", {
 				Php::ByVal("name", Php::Type::String),
 			});
 
 			/**
 			 * Check whether the DI contains a service by a name
 			 */
-			method("has",{
+			method("has", {
 				Php::ByVal("name", Php::Type::String),
 			});
 
@@ -137,7 +140,7 @@ namespace Phalcon {
 			/**
 			 * Set a default dependency injection container to be obtained into static methods
 			 */
-			method("setDefault",{
+			method("setDefault", {
 				Php::ByVal("dependencyInjector", Php::Type::Object),
 			});
 

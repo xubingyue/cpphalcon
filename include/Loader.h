@@ -3,7 +3,8 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon {
+namespace Phalcon
+{
 
 	/**
 	 * Phalcon\Loader
@@ -28,17 +29,21 @@ namespace Phalcon {
 	 * $adapter = Example\Adapter\Some();
 	 *</code>
 	 */
-	class Loader : public Php::Base {
+	class Loader : public Php::Base
+	{
 	public:
 
-		Loader() {
+		Loader()
+		{
 		}
 
-		virtual ~Loader() {
+		virtual ~Loader()
+		{
 		}
 
 		template<typename T>
-		static void Init(Php::Class<T> &loader) {
+		static void Init(Php::Class<T> &loader)
+		{
 			loader.property("_foundPath", nullptr, Php::Protected);
 			loader.property("_checkedPath", nullptr, Php::Protected);
 			loader.property("_prefixes", nullptr, Php::Protected);
@@ -136,7 +141,7 @@ namespace Phalcon {
 		Php::Value autoLoad(Php::Parameters &params);
 
 		/**
-		 * Get the path when a class was found	 
+		 * Get the path when a class was found
 		 */
 		Php::Value getFoundPath();
 
