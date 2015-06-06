@@ -1,5 +1,6 @@
 #include <phpcpp.h>
 #include "Version.h"
+#include "Debug.h"
 #include "Config.h"
 #include "Loader.h"
 #include "DispatcherInterface.h"
@@ -24,6 +25,11 @@ extern "C" {
 		Php::Class<Phalcon::Version> version("Version");
 
 		phalconNamespace.add(std::move(version));
+
+		/* Class Phalcon\Debug */
+		Php::Class<Phalcon::Debug> debug("Debug");
+
+		phalconNamespace.add(std::move(debug));
 
 		/* Class Phalcon\Config */
 		Php::Class<Phalcon::Config> config("Config");

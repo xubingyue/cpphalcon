@@ -11,6 +11,9 @@
 				<Option output="cpphalcon" prefix_auto="1" extension_auto="1" />
 				<Option type="0" />
 				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="include" />
+				</Compiler>
 				<MakeCommands>
 					<Build command="$make -f $makefile $target" />
 					<CompileFile command="$make -f $makefile $file" />
@@ -28,6 +31,7 @@
 		<Unit filename="Source/DI.cpp" />
 		<Unit filename="Source/DI_Service.cpp" />
 		<Unit filename="Source/Db.cpp" />
+		<Unit filename="Source/Debug.cpp" />
 		<Unit filename="Source/Dispatcher.cpp" />
 		<Unit filename="Source/Loader.cpp" />
 		<Unit filename="Source/Version.cpp" />
@@ -38,7 +42,9 @@
 		<Unit filename="include/DI_Service.h" />
 		<Unit filename="include/DI_ServiceInterface.h" />
 		<Unit filename="include/Db.h" />
+		<Unit filename="include/Debug.h" />
 		<Unit filename="include/Dispatcher.h" />
+		<Unit filename="include/DispatcherInterface.h" />
 		<Unit filename="include/Loader.h" />
 		<Unit filename="include/Version.h" />
 		<Extensions>

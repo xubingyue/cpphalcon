@@ -101,6 +101,7 @@ namespace Phalcon
 				Php::ByVal("name", Php::Type::String),
 				Php::ByVal("rawDefinition", Php::Type::Object),
 			});
+
 			/**
 			 * Returns a service definition without resolving
 			 *
