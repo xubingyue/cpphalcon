@@ -62,6 +62,20 @@ namespace Phalcon
 		}
 
 		/**
+		 * Enable simple debug mode
+		 *
+		 * @return Phalcon\Debug
+		 */
+		Php::Value enable();
+
+		/**
+		 * Disbale simple debug mode
+		 *
+		 * @return Phalcon\Debug
+		 */
+		Php::Value disable();
+
+		/**
 		 * Change the base URI for static resources
 		 *
 		 * @param string $uri
@@ -193,6 +207,75 @@ namespace Phalcon
 		 */
 		Php::Value onUncaughtException(Php::Parameters &params);
 
+		/**
+		 * Handles user-defined error
+		 *
+		 * @param int $severity
+		 * @param string $message
+		 * @param string $file
+		 * @param string $line
+		 * @param array $context
+		 * @return boolean
+		 */
+		Php::Value onUserDefinedError(Php::Parameters &params);
+
+		/**
+		 * Handles user-defined error
+		 *
+		 * @return boolean
+		 */
+		Php::Value onShutdown();
+
+		/**
+		 * Returns the character set used to display the HTML
+		 *
+		 * @brief string \Phalcon\Debug::getCharset(void)
+		 * @return string
+		 */
+		Php::Value getCharset();
+
+		/**
+		 * Sets the character set used to display the HTML
+		 *
+		 * @brief \Phalcon\Debug \Phalcon\Debug::setCharset(string $charset)
+		 * @param string $charset
+		 * @return \Phalcon\Debug
+		 */
+		Php::Value setCharset();
+
+		/**
+		 * Returns the number of lines deplayed before the error line
+		 *
+		 * @brief int \Phalcon\Debug::getLinesBeforeContext(void)
+		 * @return int
+		 */
+		Php::Value getLinesBeforeContext();
+
+		/**
+		 * Sets the number of lines deplayed before the error line
+		 *
+		 * @brief \Phalcon\Debug \Phalcon\Debug::setLinesBeforeContext(int $lines)
+		 * @param int $lines
+		 * @return \Phalcon\Debug
+		 */
+		Php::Value setLinesBeforeContext(Php::Parameters &params);
+
+		/**
+		 * Returns the number of lines deplayed after the error line
+		 *
+		 * @brief int \Phalcon\Debug::getLinesAfterContext(void)
+		 * @return int
+		 */
+		Php::Value getLinesAfterContext();
+
+		/**
+		 * Sets the number of lines deplayed after the error line
+		 *
+		 * @brief \Phalcon\Debug \Phalcon\Debug::setLinesAfterContext(int $lines)
+		 * @param int $lines
+		 * @return \Phalcon\Debug
+		 */
+		Php::Value setLinesAfterContext(Php::Parameters &params);
 	protected:
 	private:
 	};

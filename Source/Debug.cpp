@@ -14,6 +14,18 @@ namespace Phalcon
 		//dtor
 	}
 
+	Php::Value Debug::enable()
+	{
+
+		return nullptr;
+	}
+
+	Php::Value Debug::disable()
+	{
+
+		return nullptr;
+	}
+
 	Php::Value Debug::setUri(Php::Parameters &params)
 	{
 
@@ -104,6 +116,46 @@ namespace Phalcon
 
 	}
 	Php::Value Debug::onUncaughtException(Php::Parameters &params)
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::onUserDefinedError(Php::Parameters &params)
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::onShutdown()
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::getCharset()
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::setCharset()
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::getLinesBeforeContext()
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::setLinesBeforeContext(Php::Parameters &params)
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::getLinesAfterContext()
+	{
+
+		return nullptr;
+	}
+	Php::Value Debug::setLinesAfterContext(Php::Parameters &params)
 	{
 
 		return nullptr;

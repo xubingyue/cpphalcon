@@ -27,7 +27,7 @@ OBJECTS			=	$(SOURCES:%.cpp=%.o)
 #	From here the build instructions start
 #
 
-all: ${EXTENSION}
+all: ${OBJECTS} ${EXTENSION}
 
 ${EXTENSION}: ${OBJECTS}
 	${LINKER} ${LINKER_FLAGS} -o $@ ${OBJECTS} ${LINKER_DEPENDENCIES}
@@ -41,4 +41,4 @@ install: ${EXTENSION}
 	${CP} ${INI} ${PHP_CONFIG_DIR}
 				
 clean:
-	${RM} ${EXTENSION} ${OBJECTS}
+	${RM} *.obj *~* ${EXTENSION} ${OBJECTS}
