@@ -1,7 +1,6 @@
 #include "Config.h"
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	void Config::__construct(Php::Parameters &params)
 	{

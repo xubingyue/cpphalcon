@@ -1,7 +1,6 @@
 #include "Loader.h"
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	void Loader::__construct()
 	{

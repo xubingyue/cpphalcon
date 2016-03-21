@@ -1,18 +1,16 @@
 #ifndef PHALCON_DISPATCHERINTERFACE_H
-#define	PHALCON_DISPATCHERINTERFACE_H
+#define PHALCON_DISPATCHERINTERFACE_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 * Phalcon\DispatcherInterface
 	 *
 	 * Interface for Phalcon\Dispatcher
 	 */
-	class DispatcherInterface : public Php::Interface
-	{
+	class DispatcherInterface : public Php::Interface {
 	public:
 
 		DispatcherInterface(const char *name) : Interface(name)
@@ -21,42 +19,42 @@ namespace Phalcon
 			/**
 			 * Sets the default action suffix
 			 */
-			method("setActionSuffix", {
+			method("setActionSuffix",{
 				Php::ByVal("actionSuffix", Php::Type::String),
 			});
 
 			/**
 			 * Sets the default namespace
 			 */
-			method("setDefaultNamespace", {
+			method("setDefaultNamespace",{
 				Php::ByVal("namespace", Php::Type::String),
 			});
 
 			/**
 			 * Sets the default action name
 			 */
-			method("setDefaultAction", {
+			method("setDefaultAction",{
 				Php::ByVal("actionName", Php::Type::String),
 			});
 
 			/**
 			 * Sets the namespace which the controller belongs to
 			 */
-			method("setNamespace", {
+			method("setNamespace",{
 				Php::ByVal("namespace", Php::Type::String),
 			});
 
 			/**
 			 * Sets the module name which the application belongs to
 			 */
-			method("setModuleName", {
+			method("setModuleName",{
 				Php::ByVal("moduleName", Php::Type::String),
 			});
 
 			/**
 			 * Sets the action name to be dispatched
 			 */
-			method("setActionName", {
+			method("setActionName",{
 				Php::ByVal("actionName", Php::Type::String),
 			});
 
@@ -66,11 +64,11 @@ namespace Phalcon
 			method("getActionName");
 
 			/**
-			* Sets action params to be dispatched
-			*
-			* @param array params
-			*/
-			method("setParams", {
+			 * Sets action params to be dispatched
+			 *
+			 * @param array params
+			 */
+			method("setParams",{
 				Php::ByVal("params", Php::Type::Array),
 			});
 
@@ -85,7 +83,7 @@ namespace Phalcon
 			 * @param  mixed param
 			 * @param  mixed value
 			 */
-			method("setParam", {
+			method("setParam",{
 				Php::ByVal("param", Php::Type::Null),
 				Php::ByVal("value", Php::Type::Null),
 			});
@@ -123,7 +121,7 @@ namespace Phalcon
 			 *
 			 * @param array forward
 			 */
-			method("forward", {
+			method("forward",{
 				Php::ByVal("forward", Php::Type::Array),
 			});
 		}
@@ -131,4 +129,4 @@ namespace Phalcon
 
 } // namespace Phalcon
 
-#endif	/* PHALCON_DISPATCHERINTERFACE_H */
+#endif /* PHALCON_DISPATCHERINTERFACE_H */

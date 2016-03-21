@@ -1,10 +1,9 @@
 #ifndef PHALCON_CONFIG_H
-#define	PHALCON_CONFIG_H
+#define PHALCON_CONFIG_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 * Phalcon\Config
@@ -13,8 +12,7 @@ namespace Phalcon
 	 * It provides a nested object property based user interface for accessing this configuration data within
 	 * application code.
 	 */
-	class Config : public Php::Base, public Php::ArrayAccess
-	{
+	class Config : public Php::Base, public Php::ArrayAccess {
 	public:
 
 		template<typename T>
@@ -89,5 +87,5 @@ namespace Phalcon
 
 } // namespace Phalcon
 
-#endif	/* PHALCON_CONFIG_H */
+#endif /* PHALCON_CONFIG_H */
 

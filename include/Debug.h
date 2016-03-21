@@ -3,11 +3,14 @@
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
-	class Debug : public Php::Base
-	{
+	/**
+	 * Phalcon\Debug
+	 *
+	 * Provides debug capabilities to Phalcon applications
+	 */
+	class Debug : public Php::Base {
 	public:
 		Debug();
 		virtual ~Debug();
@@ -15,29 +18,31 @@ namespace Phalcon
 		template<typename T>
 		static void Init(Php::Class<T> &debug)
 		{
+			debug.method("enable", &Phalcon::Debug::enable);
+			debug.method("disable", &Phalcon::Debug::disable);
 			/**
 			 * Change the base URI for static resources
 			 */
-			debug.method("setUri", &Phalcon::Debug::setUri, {
+			debug.method("setUri", &Phalcon::Debug::setUri,{
 				Php::ByVal("uri", Php::Type::String),
 			});
-			debug.method("setShowBackTrace", &Phalcon::Debug::setShowBackTrace, {
+			debug.method("setShowBackTrace", &Phalcon::Debug::setShowBackTrace,{
 				Php::ByVal("showBackTrace", Php::Type::Bool),
 			});
-			debug.method("setShowFiles", &Phalcon::Debug::setShowFiles, {
+			debug.method("setShowFiles", &Phalcon::Debug::setShowFiles,{
 				Php::ByVal("showFiles", Php::Type::Bool),
 			});
-			debug.method("setShowFileFragment", &Phalcon::Debug::setShowFileFragment, {
+			debug.method("setShowFileFragment", &Phalcon::Debug::setShowFileFragment,{
 				Php::ByVal("showFileFragment", Php::Type::Bool),
 			});
-			debug.method("listen", &Phalcon::Debug::listen, {
+			debug.method("listen", &Phalcon::Debug::listen,{
 				Php::ByVal("exceptions", Php::Type::Bool),
 				Php::ByVal("lowSeverity", Php::Type::Bool),
 			});
 			debug.method("listenExceptions", &Phalcon::Debug::listenExceptions);
 			debug.method("listenLowSeverity", &Phalcon::Debug::listenLowSeverity);
 			debug.method("halt", &Phalcon::Debug::halt);
-			debug.method("debugVar", &Phalcon::Debug::debugVar, {
+			debug.method("debugVar", &Phalcon::Debug::debugVar,{
 				Php::ByVal("varz"),
 				Php::ByVal("key", Php::Type::String),
 			});
@@ -46,18 +51,25 @@ namespace Phalcon
 			debug.method("getVersion", &Phalcon::Debug::getVersion);
 			debug.method("getCssSources", &Phalcon::Debug::getCssSources);
 			debug.method("getJsSources", &Phalcon::Debug::getJsSources);
-			debug.method("showTraceItem", &Phalcon::Debug::showTraceItem, {
+			debug.method("showTraceItem", &Phalcon::Debug::showTraceItem,{
 				Php::ByVal("n", Php::Type::Numeric),
 				Php::ByVal("trace", Php::Type::Array),
 			});
-			debug.method("onUncaughtLowSeverity", &Phalcon::Debug::onUncaughtLowSeverity, {
+			debug.method("onUncaughtLowSeverity", &Phalcon::Debug::onUncaughtLowSeverity,{
 				Php::ByVal("severity", Php::Type::Numeric),
 				Php::ByVal("message", Php::Type::String),
 				Php::ByVal("file", Php::Type::String),
 				Php::ByVal("line", Php::Type::Numeric),
 			});
-			debug.method("onUncaughtException", &Phalcon::Debug::onUncaughtException, {
+			debug.method("onUncaughtException", &Phalcon::Debug::onUncaughtException,{
 				Php::ByVal("exception", "Exception"),
+			});
+			debug.method("onUserDefinedError", &Phalcon::Debug::onUncaughtException,{
+				Php::ByVal("severity", Php::Type::Numeric),
+				Php::ByVal("message", Php::Type::String),
+				Php::ByVal("file", Php::Type::String),
+				Php::ByVal("line", Php::Type::Numeric),
+				Php::ByVal("context", Php::Type::Array),
 			});
 		}
 
@@ -89,7 +101,7 @@ namespace Phalcon
 		 * @param boolean $showBackTrace
 		 * @return Phalcon\Debug
 		 */
-		Php::Value  setShowBackTrace(Php::Parameters &params);
+		Php::Value setShowBackTrace(Php::Parameters &params);
 
 		/**
 		 * Set if files part of the backtrace must be shown in the output
@@ -171,7 +183,7 @@ namespace Phalcon
 		 *
 		 * @return string
 		 */
-		Php::Value  getCssSources();
+		Php::Value getCssSources();
 
 		/**
 		 * Returns the javascript sources
@@ -189,13 +201,13 @@ namespace Phalcon
 		Php::Value showTraceItem(Php::Parameters &params);
 
 		/**
-		* Throws an exception when a notice or warning is raised
-		*
-		* @param int $severity
-		* @param string $message
-		* @param string $file
-		* @param string $line
-		* @return boolean
+		 * Throws an exception when a notice or warning is raised
+		 *
+		 * @param int $severity
+		 * @param string $message
+		 * @param string $file
+		 * @param string $line
+		 * @return boolean
 		 */
 		void onUncaughtLowSeverity(Php::Parameters &params);
 

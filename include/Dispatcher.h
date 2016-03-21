@@ -1,10 +1,9 @@
 #ifndef PHALCON_DISPATCHER_H
-#define	PHALCON_DISPATCHER_H
+#define PHALCON_DISPATCHER_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 * Phalcon\Dispatcher
@@ -12,8 +11,7 @@ namespace Phalcon
 	 * This is the base class for Phalcon\Mvc\Dispatcher and Phalcon\CLI\Dispatcher.
 	 * This class can't be instantiated directly, you can use it to create your own dispatchers
 	 */
-	class Dispatcher : public Php::Base
-	{
+	class Dispatcher : public Php::Base {
 	public:
 
 		enum EXCEPTION {
@@ -243,5 +241,5 @@ namespace Phalcon
 
 } // namespace Phalcon
 
-#endif	/* PHALCON_DISPATCHER_H */
+#endif /* PHALCON_DISPATCHER_H */
 

@@ -1,10 +1,9 @@
 #ifndef PHALCON_DB_H
-#define	PHALCON_DB_H
+#define PHALCON_DB_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 * Phalcon\Db
@@ -18,8 +17,7 @@ namespace Phalcon
 	 *
 	 * Phalcon\Db is an abstract class. You only can use it with a database adapter like Phalcon\Db\Adapter\Pdo
 	 */
-	class Db : public Php::Base
-	{
+	class Db : public Php::Base {
 	public:
 
 		template<typename T>
@@ -58,5 +56,5 @@ namespace Phalcon
 
 } // namespace Phalcon
 
-#endif	/* PHALCON_DB_H */
+#endif /* PHALCON_DB_H */
 

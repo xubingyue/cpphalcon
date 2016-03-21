@@ -1,8 +1,7 @@
 #include "Debug.h"
 
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	Debug::Debug()
 	{
@@ -32,7 +31,7 @@ namespace Phalcon
 		return nullptr;
 	}
 
-	Php::Value  Debug::setShowBackTrace(Php::Parameters &params)
+	Php::Value Debug::setShowBackTrace(Php::Parameters &params)
 	{
 
 		return nullptr;
@@ -96,65 +95,78 @@ namespace Phalcon
 
 		return nullptr;
 	}
-	Php::Value  Debug::getCssSources()
+
+	Php::Value Debug::getCssSources()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::getJsSources()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::showTraceItem(Php::Parameters &params)
 	{
 
 		return nullptr;
 	}
+
 	void Debug::onUncaughtLowSeverity(Php::Parameters &params)
 	{
 
 	}
+
 	Php::Value Debug::onUncaughtException(Php::Parameters &params)
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::onUserDefinedError(Php::Parameters &params)
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::onShutdown()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::getCharset()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::setCharset()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::getLinesBeforeContext()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::setLinesBeforeContext(Php::Parameters &params)
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::getLinesAfterContext()
 	{
 
 		return nullptr;
 	}
+
 	Php::Value Debug::setLinesAfterContext(Php::Parameters &params)
 	{
 

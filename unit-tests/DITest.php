@@ -1,6 +1,6 @@
 <?php
 
-class DiTest extends PHPUnit_Framework_TestCase
+class DITest extends PHPUnit_Framework_TestCase
 {
 	public function testBasic()
 	{

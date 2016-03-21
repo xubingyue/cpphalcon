@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="." name="0">
+      <df name="include">
+        <in>DI_Injectable.h</in>
+      </df>
       <df name="Source">
         <in>Config.cpp</in>
         <in>DI.cpp</in>
@@ -50,6 +53,10 @@
             </incDir>
           </ccTool>
         </makeTool>
+        <preBuild>
+          <preBuildCommandWorkingDir>.</preBuildCommandWorkingDir>
+          <preBuildCommand></preBuildCommand>
+        </preBuild>
       </makefileType>
       <item path="Source/Config.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
@@ -82,6 +89,8 @@
       <item path="Source/phalcon.cpp" ex="false" tool="1" flavor2="8">
         <ccTool flags="0">
         </ccTool>
+      </item>
+      <item path="include/DI_Injectable.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
   </confs>

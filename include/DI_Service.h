@@ -1,10 +1,9 @@
 #ifndef PHALCON_DI_SERVICE_H
-#define	PHALCON_DI_SERVICE_H
+#define PHALCON_DI_SERVICE_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 * Phalcon\DI\Service
@@ -17,8 +16,7 @@ namespace Phalcon
 	 *<code>
 	 *
 	 */
-	class DI_Service : public Php::Base
-	{
+	class DI_Service : public Php::Base {
 	protected:
 		Php::Value _name;
 		Php::Value _definition;
@@ -39,19 +37,19 @@ namespace Phalcon
 		template<typename T>
 		static void Init(Php::Class<T> &di_service)
 		{
-			di_service.method("__construct", &Phalcon::DI_Service::__construct, {
+			di_service.method("__construct", &Phalcon::DI_Service::__construct,{
 				Php::ByVal("name", Php::Type::String, true),
 				Php::ByVal("definition", Php::Type::Null, true),
 				Php::ByVal("shared", Php::Type::Bool, false),
 			});
-			di_service.method("setSharedInstance", {
+			di_service.method("setSharedInstance",{
 				Php::ByVal("sharedInstance", Php::Type::Null, true),
 			});
-			di_service.method("setParameter", {
+			di_service.method("setParameter",{
 				Php::ByVal("position", Php::Type::Numeric, true),
 				Php::ByVal("parameter", Php::Type::Array, true),
 			});
-			di_service.method("getParameter", {
+			di_service.method("getParameter",{
 				Php::ByVal("position", Php::Type::Numeric, true),
 			});
 		}

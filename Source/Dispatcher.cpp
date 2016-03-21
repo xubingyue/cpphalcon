@@ -1,7 +1,6 @@
 #include "Dispatcher.h"
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	void Dispatcher::__construct()
 	{

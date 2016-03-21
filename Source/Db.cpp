@@ -1,7 +1,6 @@
 #include "Db.h"
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	void Db::setup(Php::Parameters &params)
 	{

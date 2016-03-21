@@ -4,8 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	DI* DI::_default = nullptr;
 

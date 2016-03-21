@@ -7,6 +7,7 @@
 #include "Dispatcher.h"
 #include "DIInterface.h"
 #include "DI.h"
+#include "DI_Injectable.h"
 #include "DI_ServiceInterface.h"
 #include "DI_Service.h"
 #include "Db.h"
@@ -73,16 +74,17 @@ extern "C" {
 		/* Namespace DI */
 		Php::Namespace diNamespace("DI");
 
+		/* Class Phalcon\DI\Injectable */
+		Php::Class<Phalcon::DI_Injectable> diInjectable("Injectable", Php::Abstract);
+		diNamespace.add(std::move(diInjectable));
+
 		/* Interface Phalcon\DI\ServiceInterface */
 		Phalcon::DI_ServiceInterface diServiceInterface("ServiceInterface");
-
 		diNamespace.add(std::move(diServiceInterface));
 
 		/* Class Phalcon\DI\Service */
 		Php::Class<Phalcon::DI_Service> di_service("Service");
-
 		di_service.implements(diServiceInterface);
-
 		diNamespace.add(std::move(di_service));
 
 		/* namespace Phalcon\DI */

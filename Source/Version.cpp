@@ -4,8 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	Php::Value Version::get()
 	{

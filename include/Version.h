@@ -1,10 +1,9 @@
 #ifndef PHALCON_VERSION_H
-#define	PHALCON_VERSION_H
+#define PHALCON_VERSION_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 *  Forward declarations
@@ -16,8 +15,7 @@ namespace Phalcon
 	 *
 	 * This class allows to get the installed version of the framework
 	 */
-	class Version : public Php::Base
-	{
+	class Version : public Php::Base {
 	public:
 
 		enum TYPE {

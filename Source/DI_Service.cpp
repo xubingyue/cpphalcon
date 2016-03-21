@@ -4,8 +4,7 @@
 #include <iostream>
 #include <sstream>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	void DI_Service::__construct(Php::Parameters &params)
 	{

@@ -1,10 +1,9 @@
 #ifndef PHALCON_LOADER_H
-#define	PHALCON_LOADER_H
+#define PHALCON_LOADER_H
 
 #include <phpcpp.h>
 
-namespace Phalcon
-{
+namespace Phalcon {
 
 	/**
 	 * Phalcon\Loader
@@ -29,8 +28,7 @@ namespace Phalcon
 	 * $adapter = Example\Adapter\Some();
 	 *</code>
 	 */
-	class Loader : public Php::Base
-	{
+	class Loader : public Php::Base {
 	public:
 
 		Loader()
@@ -156,5 +154,5 @@ namespace Phalcon
 
 } // namespace Phalcon
 
-#endif	/* PHALCON_LOADER_H */
+#endif /* PHALCON_LOADER_H */
 
