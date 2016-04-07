@@ -44,7 +44,7 @@ namespace Phalcon {
 		 */
 		void setDI(Php::Parameters &params)
 		{
-
+			_dependencyInjector = params[0];
 		}
 
 		Php::Value getDI()
@@ -58,7 +58,7 @@ namespace Phalcon {
 		 */
 		void setEventsManager(Php::Parameters &params)
 		{
-
+			_eventsManager = params[0];
 		}
 
 		Php::Value getEventsManager()

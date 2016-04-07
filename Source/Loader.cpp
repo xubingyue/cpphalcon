@@ -4,19 +4,9 @@ namespace Phalcon {
 
 	void Loader::__construct()
 	{
-		Php::Value self(this);
-		self["_extensions"][0] = "php";
+		_extensions[0] = "php";
 	}
 
-	void Loader::setInternalEventsManager(Php::Parameters &params)
-	{
-	}
-
-	Php::Value Loader::getInternalEventsManager()
-	{
-
-		return nullptr;
-	}
 
 	Php::Value Loader::setExtensions(Php::Parameters &params)
 	{

@@ -2,6 +2,7 @@
 #define PHALCON_LOADER_H
 
 #include <phpcpp.h>
+#include <DI_Injectable.h>
 
 namespace Phalcon {
 
@@ -28,7 +29,17 @@ namespace Phalcon {
 	 * $adapter = Example\Adapter\Some();
 	 *</code>
 	 */
-	class Loader : public Php::Base {
+	class Loader : public DI_Injectable {
+	protected:
+		Php::Value _foundPath;
+		Php::Value _extensions;
+		Php::Value _checkedPath;
+		Php::Value _prefixes;
+		Php::Value _classes;
+		Php::Value _namespaces;
+		Php::Value _directories;
+		Php::Value _registered;
+
 	public:
 
 		Loader()
@@ -42,15 +53,7 @@ namespace Phalcon {
 		template<typename T>
 		static void Init(Php::Class<T> &loader)
 		{
-			loader.property("_foundPath", nullptr, Php::Protected);
-			loader.property("_checkedPath", nullptr, Php::Protected);
-			loader.property("_prefixes", nullptr, Php::Protected);
-			loader.property("_classes", nullptr, Php::Protected);
-			loader.property("_extensions", nullptr, Php::Protected);
-			loader.property("_namespaces", nullptr, Php::Protected);
-			loader.property("_directories", nullptr, Php::Protected);
-			loader.property("_registered", false, Php::Protected);
-			loader.property("_eventsManager", nullptr, Php::Protected);
+			DI_Injectable::Init(loader);
 
 			loader.method("__construct", &Phalcon::Loader::__construct);
 			loader.method("register", &Phalcon::Loader::_register);
@@ -62,16 +65,6 @@ namespace Phalcon {
 		 *
 		 */
 		void __construct();
-
-		/**
-		 * Sets the internal event manager
-		 */
-		void setInternalEventsManager(Php::Parameters &params);
-
-		/**
-		 * Returns the internal event manager
-		 */
-		Php::Value getInternalEventsManager();
 
 		/**
 		 * Sets an array of file extensions that the loader must try in each attempt to locate the file
